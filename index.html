@@ -7,35 +7,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>This 是 テーマです</title>
     <style>
-        .class1 {
-            color: pink;
+        body {
+            margin: 0;
+        }
+
+        h1 {
+            padding: 0px;
+            margin: 0;
+        }
+
+        .container {
+            width: 960px;
+            padding: 20px;
+            margin: 0 auto;
+            background-color: aliceblue;
+        }
+
+        a {
+            text-decoration: none;
+            color: skyblue;
+        }
+
+        h3 {
+            background-color: khaki;
+            box-shadow: 10px 10px 5px lightblue;
+            line-height: 30px;
+            padding-left: 15px;
+            border-radius: 10px;
+            color: #2600BF;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .intro {
+            font-family: "楷体";
+        }
+
+        h3:hover {
+            background-color: #c0c0c0;
         }
     </style>
 </head>
 
 <body>
-    <h1>
-        <center>❣はいどうも❣</center>
-    </h1>
-    <h1>NOKIHANE</h1>
-    <img src="img1.jpg" alt="Not found!">
-    <hr>
-    <ul>
-        <li><strong>Sex:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;？</li>
-        <li><strong>Tel:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Error</li>
-        <li><strong>Mail:</strong>&nbsp;&nbsp;&nbsp;&nbsp;404Notfound@404.com</li>
-        <li><strong>Birth:</strong>&nbsp;&nbsp;&nbsp;****·**·**</li>
-    </ul>
-    <hr>
-    <ol>
-        <li>
-            <a href="https://github.com/NOKIHANE">github</a>
-        </li>
-        <li>
-            <a href="form.html">form</a>
-        </li>
-    </ol>
+    <div class="container">
+        <h1>
+            <center>❣はいどうも❣</center>
+        </h1>
+        <h1>NOKIHANE</h1>
+        <img src="img/img1.jpg" alt="Not found!">
+        <hr>
+        <ul>
+            <li><strong>Sex:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;？</li>
+            <li><strong>Tel:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Error</li>
+            <li><strong>Mail:</strong>&nbsp;&nbsp;&nbsp;&nbsp;404Notfound@404.com</li>
+            <li><strong>Birth:</strong>&nbsp;&nbsp;&nbsp;****·**·**</li>
+        </ul>
+        <hr>
+        <h3>Education</h3>
+        <table width="200" frame="below">
+            <tr>
+                <th align="center">时间 </th>
+                <th align="center">地点 </th>
+            </tr>
+            <tr>
+                <td align="center">2008 </td>
+                <td align="center">友枝小学 </td>
+            </tr>
+            <tr>
+                <td align="center">2013</td>
+                <td align="center">霍格沃茨</td>
+            </tr>
+            <tr>
+                <td align="center">2017</td>
+                <td align="center">NERV</td>
+            </tr>
+            <tr>
+                <td align="center">2020</td>
+                <td align="center">克莱登</td>
+            </tr>
+        </table>
+        <h3>
+            <div class="intro"> 个人简介</div>
+        </h3>
+        <p>-----因为作者很懒，所以这里什么也没有-----</p>
+        <p><b>---这里有一个<a href="form.html">表单链接</a>---</b></p>
+        <p><b>---下面有一只猫---</b></p>
+        <p><a href="https://github.com/NOKIHANE"><img src="img/GitHub-Mark-64px.png" alt="Github"></a></p>
 
+    </div>
 </body>
 
 </html>
