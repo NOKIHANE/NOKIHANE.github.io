@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Suibe</title>
+</head>
+<style>
+    body {
+        width: auto;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    .header {
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: 10px;
+        z-index: 1;
+        text-align: center;
+    }
+
+    .header .headline {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        text-align: center;
+    }
+
+    .headline .bottom1 {
+        padding: 0;
+        margin-top: 25px;
+        gap:100px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-size: medium;
+    }
+
+    .headline .bottom2 {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-size: large;
+    }
+
+    .leftbox {
+        margin-left: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .rigthbox {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .header .txt {
+        color: white;
+        margin: 20px;
+    }
+
+    .header a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .header a:hover {
+        text-decoration: overline;
+    }
+
+    .photo {
+        margin-top: 0;
+        position: absolute;
+        z-index: -1;
+    }
+
+    .head-bottom {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        text-align: center;
+        font-size: large;
+        position: relative;
+        top: 400px;
+    }
+
+    .box1 {
+        width: 200px;
+        margin: 1px;
+        background-image: -webkit-linear-gradient(left, #fe637d, #ab7bc8);
+    }
+
+    .box2 {
+        width: 200px;
+        margin: 1px;
+        background-image: -webkit-linear-gradient(left, #aa7bc9, #40b4e5);
+    }
+
+    .box3 {
+        width: 200px;
+        margin: 1px;
+        background-image: -webkit-linear-gradient(left, #40b4e5, #22d3c5);
+    }
+
+    .box4 {
+        width: 200px;
+        margin: 1px;
+        background-image: -webkit-linear-gradient(left, #22d3c5, #cedb01);
+    }
+
+    .box5 {
+        width: 200px;
+        margin: 1px;
+        background-image: -webkit-linear-gradient(left, #cedb01, #ffb819);
+    }
+
+    .container {
+        position: relative;
+        top: 480px;
+        width: 1280px;
+        margin: 0 auto;
+        background-color: aliceblue;
+        text-align: center;
+    }
+
+    .container .title {
+        padding-top: 15px;
+        color: #005296;
+        font-size: 40px;
+        font-family: "楷体";
+    }
+
+    .container1 {
+        width: 1200px;
+        padding: 0;
+        margin-top: 25px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .newsphoto {
+        margin: 5px;
+    }
+
+    .newsbox {
+        margin: 5px;
+        width: 260px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .news {
+        height: 173px;
+        background-color: skyblue;
+    }
+
+    .news a {
+        text-decoration: none;
+        line-height: 170px;
+        vertical-align: middle;
+        color: gray;
+        font-size: 30px;
+    }
+
+    .news:hover {
+        background-color: #fe637d;
+    }
+
+    .container2-main {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        left: 250px;
+        width: 700px;
+        text-align: center;
+        position: relative;
+    }
+
+    .container2 {
+        width: 1200px;
+        padding: 0;
+        margin-top: 25px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .container2 .newslist {
+        width: 520px;
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+
+    .list a {
+        text-decoration: none;
+        line-height: 80px;
+        vertical-align: middle;
+        color: gray;
+        font-size: 30px;
+    }
+
+    .list {
+        height: 85px;
+        background-color: skyblue;
+        margin: 5px;
+    }
+
+    .list:hover {
+        background-color: #fe637d;
+    }
+
+    .container3-main {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        left: 200px;
+        width: 800px;
+        text-align: center;
+        position: relative;
+    }
+
+    .container3 {
+        width: 1200px;
+        padding: 0;
+        margin-top: 25px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .left3 {
+        width: 340px;
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .mid3 {
+        width: 340px;
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .right3 {
+        width: 340px;
+        margin: 5px;
+        column-gap: 1px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .right3 .right3box{
+        margin: 0;
+        width:165px;
+        height: 60px;
+        background-color: white;
+    }
+    .right3box:hover {
+        background-color: #fe637d;
+    }
+    .right3box a {
+        text-decoration: none;
+        line-height: 60px;
+        vertical-align: middle;
+        color: gray;
+        font-size: 20px;
+    }
+    .main{
+        align-items: center;
+    }
+    .bottom{
+        position: relative;
+        top: 500px;
+    }
+</style>
+
+<body>
+    <div class="header">
+        <img class="photo" src="img/2022.jpg" alt="2022" width="1550px">
+        <img src="img/head_bg.png" alt="head_bg" width="1550px">
+        <div class="headline">
+            <div class="bottom1">
+                <div class="leftbox">
+                    <div class="txt"><a href="">学生</a></div>
+                    <div class="txt"><a href="">教工</a></div>
+                    <div class="txt"><a href="">校友</a></div>
+                    <div class="txt"><a href="">访客</a></div>
+                </div>
+                <img src="img/suibelogo.png" alt="logo">
+                <div class="rigthbox">
+                    <div class="txt"><a href="">一网通办</a></div>
+                    <div class="txt"><a href="">邮箱</a></div>
+                    <div class="txt"><a href="">VPN</a></div>
+                    <div class="txt"><a href="">English</a></div>
+                </div>
+            </div>
+            <div class="bottom2">
+                <div class="txt"><a href="">学校概况</a></div>
+                <div class="txt"><a href="">机构设置</a></div>
+                <div class="txt"><a href="">师资队伍</a></div>
+                <div class="txt"><a href="">科学研究</a></div>
+                <div class="txt"><a href="">人才培养</a></div>
+                <div class="txt"><a href="">招生就业</a></div>
+                <div class="txt"><a href="">国际交流</a></div>
+                <div class="txt"><a href="">公开事项</a></div>
+            </div>
+        </div>
+        <div class="head-bottom">
+            <div class="box1">
+                <div class="txt"><a href="">校园要闻</a></div>
+            </div>
+            <div class="box2">
+                <div class="txt"><a href="">新闻快讯</a></div>
+            </div>
+            <div class="box3">
+                <div class="txt"><a href="">媒体报道</a></div>
+            </div>
+            <div class="box4">
+                <div class="txt"><a href="">专题网站</a></div>
+            </div>
+            <div class="box5">
+                <div class="txt"><a href="">精彩影像</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="container">
+            <div class="title">校园要闻</div>
+            <div class="container1">
+                <div class="newsphoto"><img src="img/non-pic.png" alt="non-pic" width="520px"></div>
+                <div class="newsbox">
+                    <img src="img/non-pic.png" alt="non-pic">
+                    <div class="news"><a href="">这里有些文字</a></div>
+                </div>
+                <div class="newsbox">
+                    <img src="img/non-pic.png" alt="non-pic">
+                    <div class="news"><a href="">这里有些文字</a></div>
+                </div>
+                <div class="newsbox">
+                    <img src="img/non-pic.png" alt="non-pic">
+                    <div class="news"><a href="">这里有些文字</a></div>
+                </div>
+                <div class="newsbox">
+                    <img src="img/non-pic.png" alt="non-pic">
+                    <div class="news"><a href="">这里有些文字</a></div>
+                </div>
+                <div class="newsphoto"><img src="img/non-pic.png" alt="non-pic" width="520px"></div>
+            </div>
+            <div class="container2-main">
+                <div class="title">新闻快讯</div>
+                <div class="title">媒体报道</div>
+            </div>
+            <div class="container2">
+                <div class="newslist">
+                    <div class="list"><a href="">这里有些文字</a></div>
+                    <div class="list"><a href="">这里有些文字</a></div>
+                    <div class="list"><a href="">这里有些文字</a></div>
+                    <div class="list"><a href="">这里有些文字</a></div>
+                </div>
+                <div class="newslist">
+                    <div class="list"><a href="">这里有些文字</a></div>
+                    <div class="list"><a href="">这里有些文字</a></div>
+                    <div class="list"><a href="">这里有些文字</a></div>
+                    <div class="list"><a href="">这里有些文字</a></div>
+                </div>
+            </div>
+            <div class="container3-main">
+                <div class="title">科研动态</div>
+                <div class="title">精彩影像</div>
+                <div class="title">专题网站</div>
+            </div>
+            <div class="container3">
+                <div class="left3">
+                    <div class="list"><a href="">这里有些文字</a></div>
+                    <div class="list"><a href="">这里有些文字</a></div>
+                    <div class="list"><a href="">这里有些文字</a></div>
+                    <div class="list"><a href="">这里有些文字</a></div>
+                </div>
+                <div class="mid3">
+                    <img src="img/non-pic.png" alt="non-pic">
+                    <div class="list"><a href="">这里有些文字</a></div>
+                </div>
+                <div class="right3">
+                    <div class="right3box"><a href="">这里有些文字</a></div>
+                    <div class="right3box"><a href="">这里有些文字</a></div>
+                    <div class="right3box"><a href="">这里有些文字</a></div>
+                    <div class="right3box"><a href="">这里有些文字</a></div>
+                    <div class="right3box"><a href="">这里有些文字</a></div>
+                    <div class="right3box"><a href="">这里有些文字</a></div>
+                    <div class="right3box"><a href="">这里有些文字</a></div>
+                    <div class="right3box"><a href="">这里有些文字</a></div>
+                    <div class="right3box"><a href="">这里有些文字</a></div>
+                    <div class="right3box"><a href="">这里有些文字</a></div>
+                    <div class="right3box"><a href="">这里有些文字</a></div>
+                    <div class="right3box"><a href="">这里有些文字</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <img src="img/bottom.png" alt="bottom" width="1550px">
+        </div>
+    </div>
+</body>
+
+</html>
