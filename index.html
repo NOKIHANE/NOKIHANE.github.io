@@ -5,169 +5,179 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <title>This 是 テーマです</title>
+    <title>Homepage</title>
+
     <style>
         body {
+            position: relative;
+            padding: 0;
             margin: 0;
-            background-image: linear-gradient(-225deg, #E3FDF5 1%, #FFE6FA 100%);
         }
 
-        h1 {
-            padding: 1px;
-            margin: 0;
-            background: linear-gradient(to right, #6cceff, #88ffbf);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-
+        .background {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            min-height: 100vh;
+            min-width: 100vw;
+            background-image: url("img/bg1.jpg");
+            position: absolute;
+            z-index:-1;
         }
 
-        .container {
-            width: 960px;
-            padding: 20px;
-            margin: 0 auto;
+        @media screen and (max-width: 2000px) {
+            .background {
+                background-size: 120%;
+            }
         }
 
-        a {
-            text-decoration: none;
-            color: skyblue;
+        @media screen and (max-width : 700px) {
+            .background {
+                background-size: cover;
+            }
         }
 
-        h3 {
-            background-color: khaki;
-            box-shadow: 10px 10px 5px lightblue;
-            line-height: 30px;
-            padding-left: 15px;
-            border-radius: 10px;
-            color: #3C69FF;
-            font-family: 'Courier New', Courier, monospace;
-            margin: 10px;
-        }
-
-        .intro {
-            font-family: "楷体";
-        }
-
-        h3:hover {
-            background-color: #c0c0c0;
-            transition-duration: 1s;
-            color: #6E4EB4;
-        }
-
-        .box {
+        .container{
+            top:0;
+            left:0;
+            position: absolute;
+            height:100%;
+            width:100%;
+            min-height: 100vh;
+            min-width: 100vw;
             display: flex;
-            flex-direction: row;
             justify-content: center;
             align-items: center;
-            flex-wrap: nowrap;
+            flex-direction: column;
+
+        }
+        #profile{
+            width: 135px;
+            height: 135px;
+            box-shadow: 0px 0px 15px rgba(255,255,255, 0.7);
+            border-radius: 50%;
+            transition: all 1.5s;
+        }
+        #profile:hover{
+            transform: rotate(360deg);
+            transition: all 1.5s;
+            box-shadow: 0px 0px 60px rgba(255,255,255, 0.9)
         }
 
-        .item {
-            margin: 10px;
-        }
-
-        .content-box {
-            width: 70px;
-            height: 70px;
-        }
-
-        .photobox {
+        .hitogoto{
+            margin: 30px;
+            width: 400px;
+            height: 50px;
+            background-color: rgba(255,255,255, 0.2);
+            border: 1px solid rgba(255,255,255, 0.7);
+            border-radius: 30px;
             display: flex;
-            flex-direction: row;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            flex-wrap: wrap;
+            font-size: 18px;
+            color:antiquewhite;
+            transition: all 1s;
+            font-weight: bold;
+        }
+        .hitogoto:hover{
+            background-color: rgba(255,255,255, 0.4);
+            box-shadow: 0px 0px 20px rgba(255,255,255, 0.9);
+            transition: all 1s;
+        }
+        .btnbox{
+            display: flex;
+            margin-bottom: 150px;
+        }
+        .btnbox>#btn{
+            width: 150px;
+            height: 45px;
+            margin-right:15px;
+            background-color: rgba(255,255,255, 0.2);
+            border: 1px solid rgba(255,255,255, 0.7);
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+
+            font-weight: bold;
+            color:aquamarine;
+            transition: all 1s;
+        }
+        .btnbox>#btn:hover{
+            background-color: rgba(255,255,255, 0.4);
+            box-shadow: 0px 0px 15px rgba(255,255,255, 0.9);
+            transition: all 1s;
         }
 
-        h1:hover {
-            transition: 0s;
-            animation: wobble;
-            animation-duration: 2.5s;
-        }
-
-        .rotation {
-            margin: 10px;
-            -webkit-transform: rotate(360deg);
-            animation: rotation 8s linear infinite;
-            border-radius: 250px;
-        }
-        .rotation:hover {
-            animation: none;
-        }
-        @-webkit-keyframes rotation {
-            from {
-                -webkit-transform: rotate(0deg);
-            }
-            to {
-                -webkit-transform: rotate(360deg);
-            }
-        }
 
 
     </style>
 </head>
 
+
 <body>
     <div class="container">
-        <h1>
-            <center>はいどうもヽ(✿ﾟ▽ﾟ)ノ</center>
-        </h1>
-        <h2>NOKIHANE</h2>
-        <div class="photobox">
-            <div class="item"><img src="img/img1.jpg" alt="Not found!"></div>
-            <div class="item"><img src="img/img2.jpg" alt="Not found2!"></div>
-            <div class="item"><img src="img/img3.jpg" alt="Not found3!"></div>
+        <div class="profile">
+            <img src="img/profile.jpeg" alt="" id="profile">
+            <!-- 此处放头像 -->
         </div>
-        <div class="list">
-            <hr>
-            <ul>
-                <li><strong>Sex:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;？</li>
-                <li><strong>Tel:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Error</li>
-                <li><strong>Mail:</strong>&nbsp;&nbsp;&nbsp;&nbsp;404Notfound@404.com</li>
-                <li><strong>Birth:</strong>&nbsp;&nbsp;&nbsp;****·**·**</li>
-            </ul>
-            <hr>
+        <div class="hitogoto">
+            这是一份期末作业 ヽ(✿ﾟ▽ﾟ)ノ   
         </div>
-        <h3><b>Education</b></h3>
-        <table width="200" frame="hsides">
-            <tr>
-                <td align="center"><b>时间</b> </td>
-                <td align="center"><b>地点</b> </td>
-            </tr>
-            <tr>
-                <td align="center">2008 </td>
-                <td align="center">友枝小学 </td>
-            </tr>
-            <tr>
-                <td align="center">2013</td>
-                <td align="center">霍格沃茨</td>
-            </tr>
-            <tr>
-                <td align="center">2017</td>
-                <td align="center">NERV</td>
-            </tr>
-            <tr>
-                <td align="center">2020</td>
-                <td align="center">克莱登</td>
-            </tr>
-        </table>
-        <h3>
-            <div class="intro"> <b>个人简介</b></div>
-        </h3>
-        <p>-----因为作者很懒，所以这里什么也没有-----</p>
-        <div class="box">
-            <div class="rotation"><a href="https://github.com/NOKIHANE"><img src="img/GitHub-Mark-64px.png"
-                        alt="Github"></a></div>
-            <div class="rotation"><a href="suibe.html"><img src="img/Suibe.png" alt="Suibe"></a></div>
-            <div class="item">
-                <div class="content-box">一个<br /><a href="form.html"><b>表单<br />链接<b /></a></div>
-            </div>
+        <div class="btnbox">
+            <input id="btn" type="button" onclick="window.open('aboutme.html')" value="个人简介">
+            <input id="btn" type="button" onclick="change_bg()" value="更换背景">
+            <input id="btn" type="button" onclick="window.open('racing.html')" value="赛车游戏">
+            <!-- 三个按钮 -->
         </div>
-
     </div>
+
+    <div class="background" id="background"></div>
+
+
+    <script>
+        var bg_num=1;
+        var bg = document.getElementById("background");
+        window.onload = parallax();
+
+        function parallax() {
+            function resize(a, b) {
+                return (a / b * 20-15);
+            };
+            document.body.onmousemove = function (event) {
+                let x = event.x;
+                let y = event.y;
+                let re_x = resize(x, window.innerWidth);
+                let re_y = resize(y, window.innerHeight);
+                bg.style.backgroundPositionX = re_x + 'px';
+                bg.style.backgroundPositionY = re_y + 'px';
+            }
+        }
+        function change_bg(){
+            bg_num++;
+            if(bg_num>5){
+                bg_num=1;
+            }
+            if(bg_num==1){
+                bg.style.backgroundImage="url('img/bg1.jpg')";
+            }
+            else if(bg_num==2){
+                bg.style.backgroundImage="url('img/bg2.png')";
+            }
+            else if(bg_num==3){
+                bg.style.backgroundImage="url('img/bg3.jpg')";
+            }
+            else if(bg_num==4){
+                bg.style.backgroundImage="url('img/bg4.jpg')";
+            }
+            else if(bg_num==5){
+                bg.style.backgroundImage="url('img/bg5.png')";
+            }
+        }
+    </script>
+
 </body>
 
 </html>

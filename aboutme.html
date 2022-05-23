@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>This 是 テーマです</title>
+    <style>
+        body {
+            margin: 0;
+            background-image: linear-gradient(-225deg, #E3FDF5 1%, #FFE6FA 100%);
+        }
+
+        h1 {
+            padding: 1px;
+            margin: 0;
+            background: linear-gradient(to right, #6cceff, #88ffbf);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+
+        }
+
+        .container {
+            width: 960px;
+            padding: 20px;
+            margin: 0 auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: skyblue;
+        }
+
+        h3 {
+            background-color: khaki;
+            box-shadow: 10px 10px 5px lightblue;
+            line-height: 30px;
+            padding-left: 15px;
+            border-radius: 10px;
+            color: #3C69FF;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 10px;
+        }
+
+        .intro {
+            font-family: "楷体";
+        }
+
+        h3:hover {
+            background-color: #c0c0c0;
+            transition-duration: 1s;
+            color: #6E4EB4;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: nowrap;
+        }
+
+        .item {
+            margin: 10px;
+        }
+
+        .content-box {
+            width: 70px;
+            height: 70px;
+        }
+
+        .photobox {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        h1:hover {
+            transition: 0s;
+            animation: wobble;
+            animation-duration: 2.5s;
+        }
+
+        .rotation {
+            margin: 10px;
+            -webkit-transform: rotate(360deg);
+            animation: rotation 8s linear infinite;
+            border-radius: 250px;
+        }
+        .rotation:hover {
+            animation: none;
+        }
+        @-webkit-keyframes rotation {
+            from {
+                -webkit-transform: rotate(0deg);
+            }
+            to {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>
+            <center>はいどうもヽ(✿ﾟ▽ﾟ)ノ</center>
+        </h1>
+        <h2>NOKIHANE</h2>
+        <div class="photobox">
+            <div class="item"><img src="img/img1.jpg" alt="Not found!"></div>
+            <div class="item"><img src="img/img2.jpg" alt="Not found2!"></div>
+            <div class="item"><img src="img/img3.jpg" alt="Not found3!"></div>
+        </div>
+        <div class="list">
+            <hr>
+            <ul>
+                <li><strong>Sex:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;？</li>
+                <li><strong>Tel:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Error</li>
+                <li><strong>Mail:</strong>&nbsp;&nbsp;&nbsp;&nbsp;404Notfound@404.com</li>
+                <li><strong>Birth:</strong>&nbsp;&nbsp;&nbsp;****·**·**</li>
+            </ul>
+            <hr>
+        </div>
+        <h3><b>Education</b></h3>
+        <table width="200" frame="hsides">
+            <tr>
+                <td align="center"><b>时间</b> </td>
+                <td align="center"><b>地点</b> </td>
+            </tr>
+            <tr>
+                <td align="center">2008 </td>
+                <td align="center">友枝小学 </td>
+            </tr>
+            <tr>
+                <td align="center">2013</td>
+                <td align="center">霍格沃茨</td>
+            </tr>
+            <tr>
+                <td align="center">2017</td>
+                <td align="center">NERV</td>
+            </tr>
+            <tr>
+                <td align="center">2020</td>
+                <td align="center">克莱登</td>
+            </tr>
+        </table>
+        <h3>
+            <div class="intro"> <b>个人简介</b></div>
+        </h3>
+        <p>-----因为作者很懒，所以这里什么也没有-----</p>
+        <div class="box">
+            <div class="rotation"><a href="https://github.com/NOKIHANE"><img src="img/GitHub-Mark-64px.png"
+                        alt="Github"></a></div>
+            <div class="rotation"><a href="suibe.html"><img src="img/Suibe.png" alt="Suibe"></a></div>
+            <div class="item">
+                <div class="content-box">一个<br /><a href="form.html"><b>表单<br />链接<b /></a></div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

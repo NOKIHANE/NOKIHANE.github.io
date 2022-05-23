@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rank</title>
+</head>
+
+<body>
+
+    <table border="1">
+        <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Score</th>
+        </tr>
+        <tbody id="rank_num">
+            <% for(let r of ranking){ %>
+            <tr>
+                <td></td>
+                <td><%= r.name %></td>
+                <td><%= r.score %></td>
+            </tr>
+            <% } %>
+        </tbody>
+    </table>
+
+    <form action="/addname" method="post">
+        Your name:<input type="text" name="name" id=""></br>
+        Your score:<input type="text" name="score" id="">
+        <input type="submit" value="提交">
+    </form>
+    
+
+    <script>
+        window.onload = function () {
+            var rank_num = document.getElementById("rank_num");
+            for (let i = 0; i < rank_num.rows.length; i++) {
+                rank_num.rows[i].cells[0].innerHTML = (i + 1);
+            }
+        }
+
+    </script>
+</body>
+
+</html>

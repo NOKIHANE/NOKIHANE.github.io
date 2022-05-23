@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Racing Game</title>
+    <script src="index.js" type="text/javascript"></script>
+    <style>
+        .container {
+            display: flex;
+
+        }
+
+        .gamebox {
+            width: 1000px;
+            height: 650px;
+            background-color: antiquewhite;
+            position: relative;
+        }
+
+        .outerring {
+            border: 5px solid red;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            position: absolute;
+        }
+
+        .innerring {
+            border: 5px solid red;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            position: absolute;
+        }
+
+        .car {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: aquamarine;
+            position: absolute;
+            top: 300px;
+            left: 250px;
+            z-index: 1;
+        }
+
+        #startline {
+            background-color: white;
+            width: 125px;
+            height: 20px;
+            position: absolute;
+            top: 305px;
+            left: 197px;
+        }
+
+        #finishline {
+            background-color: white;
+            width: 125px;
+            height: 20px;
+            position: absolute;
+            top: 355px;
+            left: 202px;
+        }
+
+        .menu {
+            margin-left: 50px;
+            background-color: aliceblue;
+            width: 400px;
+
+        }
+
+        #timer {
+            font-size: 40px;
+            text-align: center;
+        }
+
+        .menu #btn {
+            font-size: 18px;
+        }
+
+        .menu>#myscore {
+            margin: 20px;
+            font-size: 28px;
+        }
+
+        .menu>#myhighscore {
+            margin: 20px;
+            font-size: 28px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>赛车 说明：上下左右键操控</h3>
+    <div class="container">
+        <div class="gamebox" id="gamebox">
+            <div class="outerring" id="outer"></div>
+            <div class="innerring" id="inner"></div>
+            <div class="car" id="mycar"></div>
+            <div id="startline">
+                <center>START
+            </div>
+            <div id="finishline">
+                <center>FINISH
+            </div>
+        </div>
+        <div class="menu">
+            <div id="timer">00:00:00</div>
+            <input id="btn" type="button" onclick="gamestart()" value="Start" />
+            <input id="btn" type="button" onclick="reset()" value="Reset" />
+            </br>
+            <div id="myscore">Your score: </div>
+            <div id="myhighscore">Your highest score:</div>
+            <a href="http://localhost:3000/"><input id="btn" type="button" value="Rank"></a>
+        </div>
+    </div>
+
+
+    <script>
+        var center = document.getElementById("gamebox");
+        var car = document.getElementById("mycar");
+        var outer = document.getElementById("outer");
+        var inner = document.getElementById("inner");
+        var end = document.getElementById("finishline");
+        var timer = document.getElementById("timer");
+        var myscore = document.getElementById("myscore");
+        var myhighscore = document.getElementById("myhighscore")
+
+        var time = 0;
+        var millisecond = 0;
+        var second = 0;
+        var min = 0;
+        //用于显示时间
+        var ms = '';
+        var s = '';
+        var m = '';
+
+        var score = 0;
+        var highscore = 9999;
+        var center_x = parseFloat((getComputedStyle(center).width)) / 2;
+        var center_y = parseFloat((getComputedStyle(center).height)) / 2;
+
+        var dis_inner = parseFloat(getComputedStyle(inner).width) / 2 + parseFloat(getComputedStyle(car).width) / 2;
+        var dis_outer = 3 + parseFloat(getComputedStyle(outer).width) / 2 - parseFloat(getComputedStyle(car).width) / 2;
+
+
+        function gamestart() {
+            myscore.innerText = "Your score: ";
+            reset();
+            timestart();
+            document.onkeydown = function (key) {
+                if (key.keyCode == 37) {
+                    car.style.left = car.offsetLeft - 10 + 'px';
+                } else if (key.keyCode == 39) {
+                    car.style.left = car.offsetLeft + 10 + 'px';
+                } else if (key.keyCode == 38) {
+                    car.style.top = car.offsetTop - 10 + 'px';
+                } else if (key.keyCode == 40) {
+                    car.style.top = car.offsetTop + 10 + 'px';
+                }
+                isfailed();
+                isfinishied();
+            }
+
+            function isfailed() {
+                if (Math.sqrt(Math.pow(parseFloat((getComputedStyle(car).width)) / 2 + parseFloat(car.offsetLeft) -
+                            center_x, 2) +
+                        Math.pow(parseFloat((getComputedStyle(car).height)) / 2 + parseFloat(car.offsetTop) - center_y,
+                            2)
+                    ) > dis_outer ||
+                    Math.sqrt(Math.pow(parseFloat((getComputedStyle(car).width)) / 2 + parseFloat(car.offsetLeft) -
+                            center_x, 2) +
+                        Math.pow(parseFloat((getComputedStyle(car).height)) / 2 + parseFloat(car.offsetTop) - center_y,
+                            2)
+                    ) < dis_inner) {
+                    alert("Game Over!");
+                    timestop();
+                }
+            }
+
+            function isfinishied() {
+                if (parseFloat(car.offsetTop) - parseFloat(end.offsetTop) < 12 &&
+                    parseFloat(car.offsetTop) - parseFloat(end.offsetTop) > -4 &&
+                    parseFloat(car.offsetLeft) < 325) {
+                    alert("You win!");
+                    timestop();
+                    cal_score();
+                    alert("Your score: " + score);
+
+                }
+            }
+
+        }
+
+        function reset() {
+            car.style.top = 305 + 'px';
+            car.style.left = 250 + 'px';
+            score = 0;
+            timereset();
+        }
+
+        function timestart() {
+            timer_on();
+        }
+
+        function timer_on() {
+            time = setInterval(function () {
+                millisecond++;
+                if (millisecond == 100) {
+                    second++;
+                    millisecond = 0;
+                }
+                if (second == 60) {
+                    min++;
+                    second = 0;
+                }
+                if (millisecond < 10) {
+                    ms = '0' + millisecond;
+                } else {
+                    ms = millisecond;
+                }
+                s = second;
+                m = min;
+                timer.innerHTML = ` ${m}:${s}:${ms} `;
+            }, 10);
+        }
+
+        function timestop() {
+            clearInterval(time);
+        }
+
+        function timereset() {
+            millisecond = second = min = 0;
+            timer.innerHTML = '00:00:00';
+        }
+
+        function cal_score() {
+            score = parseFloat(60 * parseInt(m) + parseInt(s) + 0.01 * parseInt(ms));
+            myscore.innerText = "Your score: " + score;
+            cal_highscore();
+        }
+        
+        function cal_highscore() {
+            if (score < highscore) {
+                highscore = score;
+                myhighscore.innerText = "Your highest score: " + highscore;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
